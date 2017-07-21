@@ -119,6 +119,7 @@ PKCS11Path::Params PKCS11Path::getPkcs11ModulePath() {
     static const std::string latPath("otlv-pkcs11.so");
     static const std::string finPath("opensc-pkcs11.so");
     static const std::string litPath("/usr/lib/ccs/libccpkip11.so");
+    static const std::string aetPath("/usr/lib/pkcs11/libaetpkss.so");
 #endif
     static const std::map<std::string, Params> m = {
 #ifdef _WIN32
@@ -149,6 +150,7 @@ PKCS11Path::Params PKCS11Path::getPkcs11ModulePath() {
         {"3B7D94000080318065B0831100C883009000", {litPath, "PIN", "PIN"}},
         {"3B9F9681B1FE451F070064051EB20031B0739621DB00900050", {litPath, "PIN", "PIN"}},
         {"3B9F90801FC30068104405014649534531C800000000", {litPath, "PIN", "PIN"}},
+        {"3B7418000073667465", {aetPath, "PIN", "PIN"}},
     };
 
     for (const std::string &atr : atrList()) {
